@@ -32,6 +32,7 @@
         <link href='http://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
+        <link rel="stylesheet" href="css/vendor/nv.css">
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
@@ -47,8 +48,78 @@
     </header>
     <main class="container">
         <p>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Is our justice system <em>really</em> just? In a recent study, the Death Penalty Information center discovered that <strong>nearly 6%</strong> more black defendants are executed for homicide than white defendants. 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Is our justice system <em>really</em> just? In 1998, the Death Penalty Information Center published a study that examined the number of defendants convicted of murder that were sentenced to death in the Philadelphia court system, between 1983 and 1993. The tables below represent their findings, the upper displaying the number of convicts executed, the lower showing the percentage.
         </p>
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Black Victim</th>
+                    <th>White Victim</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Black Defendant</strong></td>
+                    <td class="center">76 of 422</td>
+                    <td class="center">21 of 99</td>
+                    <td class="center">97 of 521</td>
+                </tr>
+                <tr>
+                    <td><strong>White Defendant</strong></td>
+                    <td class="center">1 of 25</td>
+                    <td class="center">17 of 121</td>
+                    <td class="center">18 of 146</td>
+                </tr>
+                <tr>
+                    <td><strong>Total</strong></td>
+                    <td class="center">77 of 447</td>
+                    <td class="center">38 of 220</td>
+                    <td class="center">115 of 667</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Black Victim</th>
+                    <th>White Victim</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Black Defendant</strong></td>
+                    <td class="center">18.0%</td>
+                    <td class="center">21.2%</td>
+                    <td class="center">18.6%</td>
+                </tr>
+                <tr>
+                    <td><strong>White Defendant</strong></td>
+                    <td class="center">4.0%</td>
+                    <td class="center">14.1%</td>
+                    <td class="center">12.3%</td>
+                </tr>
+                <tr>
+                    <td><strong>Total</strong></td>
+                    <td class="center">17.2%</td>
+                    <td class="center">17.3%</td>
+                    <td class="center">17.2%</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The data shows that about the same percentage of convicts were executed for murder of a black or white victim, however, when looking at the executions in the context of the defendants, a discrepancy becomes apparent. Nearly <strong>6.3% more</strong> black defendants are executed for homicide. Further analysis of the DPIC's findings show even more troubling evidence. 
+        </p>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Approximately 18% of black defendants were executed for the murder of a black victim. The percentage jumps to 21.2% when the victim was white. Looking at the cases of white defendants, 14.1% were executed for killing a white victim. The number plummets to 4% when the victim was black.
+        </p>
+        <div id="bdbv" class="pull-left">
+            <samp>Sentences of Black Defendants for Homicides</samp>
+            <svg></svg>
+        </div>
         <p>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </p>
@@ -59,8 +130,9 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
     <script src="js/vendor/bootstrap.min.js"></script>
-    <script src="js/vendor/d3.min.js"></script>
     <script src="js/vendor/lettering.min.js"></script>
+    <script src="js/vendor/d3.min.js"></script>
+    <script src="js/vendor/nv.js"></script>
     <script src="js/main.js"></script>
     </body>
 </html>

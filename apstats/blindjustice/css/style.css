@@ -6,6 +6,10 @@ body {
 	font-size: 2em;
 }
 
+#bdbv, #bdwv {
+	height: 400px;
+}
+
 h1,h2,h3 {
 	font-family: 'Righteous', cursive;
 }
@@ -21,6 +25,10 @@ header h1 {
 header h1 small {
 	font-size: 0.3em;
 	font-family: 'Lora', serif;
+}
+
+table .center {
+	text-align: center;
 }
 
 #colorblind .char1 {
