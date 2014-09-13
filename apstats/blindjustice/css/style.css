@@ -17,3 +17,42 @@ header {
 header h1 {
 	font-size: 6em;
 }
+
+header h1 small {
+	font-size: 0.3em;
+	font-family: 'Lora', serif;
+}
+
+#colorblind .char1 {
+	color: #333;
+}
+#colorblind .char2 {
+	color: #444;
+}
+#colorblind .char3 {
+	color: #555;
+}
+#colorblind .char4 {
+	color: #666;
+}
+#colorblind .char5 {
+	color: #777;
+}
+#colorblind .char6 {
+	color: #888;
+}
+#colorblind .char7 {
+	color: #999;
+}
+#colorblind .char8 {
+	color: #AAA;
+}
+#colorblind .char9 {
+	color: #BBB;
+}
+#colorblind .char10 {
+	color: #CCC;
+}
+#colorblind .char11 {
+	color: #DDD;
+}
