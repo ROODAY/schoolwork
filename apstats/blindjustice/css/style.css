@@ -6,8 +6,11 @@ body {
 	font-size: 2em;
 }
 
-#bdbv, #bdwv {
+#bdbv {
 	height: 400px;
+}
+#bwsentences {
+	height: 800px;
 }
 
 h1,h2,h3 {
