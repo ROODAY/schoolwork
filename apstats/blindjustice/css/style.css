@@ -5,7 +5,9 @@ body {
 	background-color: #ECECEC;
 	font-size: 2em;
 }
-
+main {
+	line-height: 2;
+}
 #bdbv {
 	height: 400px;
 }
