@@ -1,12 +1,15 @@
 html, body {
 	margin: 0;
 	padding: 0;
+	color: #333;
 	background-color: #EEE;
 	font-size: 1rem;
+	font-family: 'Open Sans', sans-serif;
 }
 
 section>h1 {
 	text-align: center;
+	font-family: 'Roboto Condensed', sans-serif;
 }
 
 nav {
@@ -23,6 +26,10 @@ nav {
 	transition: right 0.5s ease;
 }
 
+nav ul {
+	list-style: none;
+}
+
 #navbutton {
 	cursor: pointer;
 	color: #333;
@@ -34,4 +41,55 @@ nav {
 	-webkit-transition: color 0.5s ease;
 	-moz-transition: color 0.5s ease;
 	transition: color 0.5s ease;
+}
+
+footer {
+	background-color: #333;
+	color: #ccc;
+}
+
+footer div {
+	padding: 5px;
+}
+
+a {
+	color: #FFF494;
+	-webkit-transition: color 0.5s ease;
+	-moz-transition: color 0.5s ease;
+	transition: color 0.5s ease;
+}
+
+a:hover, a:focus {
+	text-decoration: none;
+	color: #5B44B2;
+}
+
+.fltleft {
+	float: left;
+	margin: 3px;
+}
+.fltright {
+	float: right;
+	margin: 3px;
+}
+
+@media (max-width: 767px) {
+	nav {
+		width: 25vw !important;
+	}
+}
+@media (min-width: 768px) and (max-width: 991px) {
+	nav {
+		width: 20vw !important;
+	}
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+	nav {
+		width: 20vw !important;
+	}
+}
+@media (min-width: 1200px) {
+	nav {
+		width: 10vw !important;
+	}
 }
