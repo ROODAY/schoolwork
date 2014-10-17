@@ -11,10 +11,13 @@ $(document).ready(function(){
 	    	$("#4").attr("src", $("#4").attr("data-lol"));
 	    	var sparta = new Audio('../img/sparta.wav'); 
 			sparta.volume = 1;
-			sparta.addEventListener('ended', function() {
+			/*sparta.addEventListener('ended', function() {
 			    $("#hider").css("margin-top", "100vh");
-			}, false);
+			}, false);*/
 			sparta.play();
+			setTimeout(function(){
+				$("#hider").css("margin-top", "100vh");
+			}, 2000);
 		} 
 	}, true);
 	$("#navbutton").mouseenter(function(){
