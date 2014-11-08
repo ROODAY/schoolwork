@@ -2,7 +2,7 @@ html, body {
 	margin: 0;
 	padding: 0;
 	color: #333;
-	background-color: #EAF4C2;
+	background-color: #eee;
 	line-height: 1.5;
 	font-size: 1rem;
 	font-family: 'Open Sans', sans-serif;
@@ -65,8 +65,7 @@ footer div {
 }
 
 a {
-	font-family: 'Montserrat', sans-serif;
-	color: #9E1E4C;
+	color: #333;
 	-webkit-transition: color 0.5s ease;
 	-moz-transition: color 0.5s ease;
 	transition: color 0.5s ease;
@@ -74,7 +73,7 @@ a {
 
 a:hover, a:focus {
 	text-decoration: none;
-	color: #7E0E1C;
+	color: #eee;
 }
 
 .fltleft {
