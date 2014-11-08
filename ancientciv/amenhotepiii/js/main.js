@@ -1,8 +1,9 @@
 $(document).ready(function(){
 	$("#1").attr("data-real", $("#1").attr("src"));
-    	$("#2").attr("data-real", $("#2").attr("src"));
-    	$("#3").attr("data-real", $("#3").attr("src"));
-    	$("#4").attr("data-real", $("#4").attr("src"));
+	$("#2").attr("data-real", $("#2").attr("src"));
+	$("#3").attr("data-real", $("#3").attr("src"));
+	$("#4").attr("data-real", $("#4").attr("src"));
+	$("#5").attr("data-real", $("#5").attr("src"));
 	var lol = false;
 	var listener = new window.keypress.Listener();
 	listener.sequence_combo("s n e f e r u", function() {
@@ -14,6 +15,7 @@ $(document).ready(function(){
 		    	$("#2").attr("src", $("#2").attr("data-lol"));
 		    	$("#3").attr("src", $("#3").attr("data-lol"));
 		    	$("#4").attr("src", $("#4").attr("data-lol"));
+		    	$("#5").attr("src", $("#5").attr("data-lol"));
 			}, 500);
 		} else {
 			lol = false;
@@ -22,14 +24,9 @@ $(document).ready(function(){
 		    	$("#2").attr("src", $("#2").attr("data-real"));
 		    	$("#3").attr("src", $("#3").attr("data-real"));
 		    	$("#4").attr("src", $("#4").attr("data-real"));
+		    	$("#5").attr("src", $("#5").attr("data-real"));
 			}, 500);
 		}
-		var sparta = new Audio('../img/sparta.wav'); 
-		sparta.volume = 1;
-		/*sparta.addEventListener('ended', function() {
-		    $("#hider").css("margin-top", "100vh");
-		}, false);*/
-		sparta.play();
 		setTimeout(function(){
 			$("#hider").css("margin-top", "-100vh");
 		}, 2000);
