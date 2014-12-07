@@ -591,6 +591,8 @@ body {
 						transform 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985),
 						visibility 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985),
 						opacity 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
+	background-color: rgba(50,50,50,0.5);
+	border-radius: 10px;
 }
 
 /* Global transition speed settings */
