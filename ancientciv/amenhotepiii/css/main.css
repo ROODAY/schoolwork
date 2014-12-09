@@ -1,0 +1,108 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	color: #333;
+	background-color: #EAF4C2;
+	line-height: 1.5;
+	font-size: 1rem;
+	font-family: 'Open Sans', sans-serif;
+}
+
+#hider {
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	overflow: hidden;
+	background-color: #333;
+	margin-top: -100vh;
+	transition: margin-top 0.5s ease;
+}
+
+section>h1 {
+	text-align: center;
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+nav {
+	height: 100vh;
+	width: 20vw;
+	background-color: #DCB951;
+	color: #ccc;
+	position: fixed;
+	right: -20vw;
+	z-index: 5000;
+	top: 0;
+	-webkit-transition: right 0.5s ease;
+	-moz-transition: right 0.5s ease;
+	transition: right 0.5s ease;
+}
+
+nav ul {
+	list-style: none;
+}
+
+#navbutton {
+	cursor: pointer;
+	color: #DCB951;
+	font-size: 1.75rem;
+	position: fixed;
+	right: 5px;
+	z-index: 5001;
+	top: 5px;
+	-webkit-transition: color 0.5s ease;
+	-moz-transition: color 0.5s ease;
+	transition: color 0.5s ease;
+}
+
+footer {
+	background-color: #DCB951;
+	color: #333;
+	margin-top: 5rem;
+}
+
+footer div {
+	padding: 5px;
+}
+
+a {
+	font-family: 'Montserrat', sans-serif;
+	color: #9E1E4C;
+	-webkit-transition: color 0.5s ease;
+	-moz-transition: color 0.5s ease;
+	transition: color 0.5s ease;
+}
+
+a:hover, a:focus {
+	text-decoration: none;
+	color: #7E0E1C;
+}
+
+.fltleft {
+	float: left;
+	margin: 3px;
+}
+.fltright {
+	float: right;
+	margin: 3px;
+}
+
+@media (max-width: 767px) {
+	nav {
+		width: 25vw !important;
+	}
+}
+@media (min-width: 768px) and (max-width: 991px) {
+	nav {
+		width: 20vw !important;
+	}
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+	nav {
+		width: 20vw !important;
+	}
+}
+@media (min-width: 1200px) {
+	nav {
+		width: 10vw !important;
+	}
+}
