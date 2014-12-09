@@ -153,7 +153,6 @@
 					<h2>Acquiring Subjects</h2>
 					<p>
 						<ul>
-							<li>The first step to the experiment was to collect all the participants.</li>
 							<li>The participants were not randomly selected, they were male volunteers who responded to an ad.</li>
 							<li>The subjects were between the ages of 30 and 50, and were stratified by their backgrounds.</li>
 						</ul>
@@ -219,23 +218,59 @@
 			</section>
 
 			<section>
-				<h2>Conclusions</h2>
-				<p>
-								
-				</p>
-				<aside class="notes">
-					
-				</aside>
+				<section>
+					<h2>Conclusions</h2>
+					<p>
+						<ul>
+							<li>Before the experiment, Milgram polled Yale students, as well as his colleagues, and they all thought only a small amount would administer the maximum voltage.</li>
+							<li>Due to the results (65% administered the maximum voltage), Milgram came to the conclusion that even ordinary people can commit terrible acts when an authority tells them to.</li>
+						</ul>
+						<blockquote>
+							Ordinary people, simply doing their jobs, and without any particular hostility on their part, can become agents in a terrible destructive process. Moreover, even when the destructive effects of their work become patently clear, and they are asked to carry out actions incompatible with fundamental standards of morality, relatively few people have the resources needed to resist authority.
+						</blockquote>
+					</p>
+				</section>
+				<section>
+					<h2>Agentic Theory</h2>
+					<p>
+						<ul>
+							<li>
+								Part of Milgram's conclusion was his Agentic Theory. In his theory, he postulated that there were two states of behaviour that a person could be in:
+								<ul>
+									<li class="fragment"><strong>The Autonomous State</strong>: In which a person directs their own actions and takes responsibility.</li>
+									<li class="fragment"><strong>The Agentic State</strong>: In which a person allows others to direct them, and lets them take responsibility for their actions.</li>
+								</ul>
+							</li>
+							<li>
+								Milgram also theorized that there were two conditions necessary for the agentic state to activate:
+								<ol>
+									<li class="fragment">The person giving orders has to be perceived to be qualified to do so.</li>
+									<li class="fragment">The person taking orders has to believe the authority will accept responsibility for their actions.</li>
+								</ol>
+							</li>
+						</ul>
+					</p>
+				</section>
 			</section>
 
 			<section>
 				<h2>Things to take away</h2>
 				<p>
 					<ol>
-						<li>The experiment was done in response to the Nazi war crimes of World War II.</li>
-						<li>There were over 18 different variations to the original experiment over the years.</li>
-						<li>Nearly 3/4 of all the participants of the original experiment administered the full shock. (26 out of 40, or 65% to be exact)</li>
+						<li class="fragment">The experiment was done in response to the Nazi war crimes of World War II.</li>
+						<li class="fragment">There were over 18 different variations to the original experiment over the years.</li>
+						<li class="fragment">Nearly 3/4 of all the participants of the original experiment administered the full shock. (26 out of 40, or 65% to be exact)</li>
 					</ol>		
+				</p>
+			</section>
+			<section data-state="applause">
+				<h1>FIN</h1>
+				<p>
+					[applause]
+					<audio src="applause.mp3" id="apl"></audio>
+				</p>
+				<p class="fragment">
+					[thank you]
 				</p>
 			</section>
 		</div>
@@ -270,6 +305,13 @@
 				{ src: 'socket.io/socket.io.js', async: true },
 				{ src: 'plugin/notes-server/client.js', async: true }
 			]
+		});
+
+		Reveal.addEventListener('applause', function() {
+			document.getElementById('apl').play();
+			document.getElementById('apl').addEventListener('ended', function() {
+				Reveal.nextFragment();
+			});
 		});
 
 	</script>
