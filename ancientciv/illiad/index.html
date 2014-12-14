@@ -51,7 +51,7 @@
                 color: rgba(255,255,255,.84);
                 margin-bottom: 0;
             }
-            .panel span {
+            .panel span, .panel a {
                 color: rgba(255,255,255,.84) !important;
             }
             .panel span a{
@@ -271,7 +271,7 @@
             
         <div class="panel panel-default">
             <div class="panel-body">
-                originally by David Silverman, prettified by Rudhra Raveendran
+                originally by <a href="http://academic.reed.edu/humanities/110tech/Iliad.Outline.html">David Silverman</a>, prettified by Rudhra Raveendran
                 <span class="pull-right"><a href="#top">Back to top <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></a></span>
             </div>
         </div>
@@ -296,6 +296,9 @@
                             }
                         }
                     });
+                });
+                $('.dropdown-menu a').on('click', function(){
+                    $(".dropdown-toggle").click();
                 });
             });
         </script>
