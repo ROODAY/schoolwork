@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8"> 
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
         <link href="css/ripples.min.css" rel="stylesheet">
         <link href="css/material-wfont.min.css" rel="stylesheet">
-        <title>Notes - Egypt</title>
+
         <link rel="shortcut icon" href="favicons/favicon.ico">
         <link rel="icon" sizes="16x16 32x32 64x64" href="favicons/favicon.ico">
         <link rel="icon" type="image/png" sizes="196x196" href="favicons/favicon-192.png">
@@ -25,84 +26,75 @@
         <meta name="msapplication-TileColor" content="#FFFFFF">
         <meta name="msapplication-TileImage" content="favicons/favicon-144.png">
         <meta name="msapplication-config" content="favicons/browserconfig.xml">
+
+        <title>New Kingdom Notes</title>
+
         <style>
-            #top {
+            .jumbotron {
                 background-color: #009587 !important;
                 color: rgba(255,255,255,.84);
+            }
+            .jumbotron h3 {
+                color: rgba(255,255,255,.75) !important;
             }
             html,body {
                 font-size: 1rem;
             }
-            main {
+            .section {
                 margin-left: 1rem;
             }
-            #footer {
-                width: 100vw;
-                position: fixed;
-                bottom: 0;
-                margin: 0;
-                padding: 0;
+            .section p {
+                text-indent: 2rem;
+                font-size: 1.2rem;
+            }
+            .panel {
                 background-color: #009587 !important;
                 color: rgba(255,255,255,.84);
+                margin-bottom: 0;
             }
-            #spacer {
-                margin-top: 1rem;
-                opacity: 0.0;
+            .panel span, .panel a {
+                color: rgba(255,255,255,.84) !important;
+            }
+            .panel span a{
+                color: rgba(255,255,255,.84) !important;
+            }
+            .navbar {
+                background-color: #009587 !important;
             }
         </style>
     </head>
     <body>
         <div class="jumbotron" id="top">
-            <h1>Ancient Civilizations</h1>
+            <h1>New Kingdom</h1>
+            <div class="navbar navbar-inverse">
+                <div class="navbar-collapse collapse navbar-inverse-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Sections <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#"></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <main class="container">
-            <h2>Kingdom:</h2>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="jumbotron">
-                        <h2>Introduction</h2>
-                        <a href="intro" class="btn btn-primary btn-raised">Visit Page <i class="mdi-action-open-in-new"></i><div class="ripple-wrapper"></div></a>
-                    </div>
-                </div>
+        
+        <div class="container">
+            <div class="section" id="">
+                <h2></h2>
+                <p>
+                    
+                </p>
+                <a href="#top">Back to top</a>
             </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="jumbotron">
-                        <h2>Pre-Kingdom/Old Kingdom</h2>
-                        <a href="old" class="btn btn-primary btn-raised">Visit Page <i class="mdi-action-open-in-new"></i><div class="ripple-wrapper"></div></a>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="jumbotron">
-                        <h2>Middle Kingdom</h2>
-                        <a href="middle" class="btn btn-primary btn-raised">Visit Page <i class="mdi-action-open-in-new"></i><div class="ripple-wrapper"></div></a>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="jumbotron">
-                        <h2>New Kingdom</h2>
-                        <a href="new" class="btn btn-primary btn-raised">Visit Page <i class="mdi-action-open-in-new"></i><div class="ripple-wrapper"></div></a>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="jumbotron">
-                        <h2>Decline of Egypt</h2>
-                        <a href="fall" class="btn btn-primary btn-raised">Visit Page <i class="mdi-action-open-in-new"></i><div class="ripple-wrapper"></div></a>
-                    </div>
-                </div>
-            </div>
-        </main>
-        <div class="panel panel-default" id="spacer">
-            <div class="panel-body">Spacer</div>
         </div>
-        <div class="panel panel-default" id="footer">
-            <div class="panel-body">Rudhra Raveendran &copy; 2014</div>
+            
+        <div class="panel panel-default">
+            <div class="panel-body">
+                Rudhra Raveendran &copy; 2014
+                <span class="pull-right"><a href="#top">Back to top <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></a></span>
+            </div>
         </div>
 
         <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
@@ -112,6 +104,23 @@
         <script>
             $(document).ready(function() {
                 $.material.init();
+                $(function() {
+                    $('a[href*=#]:not([href=#])').click(function() {
+                        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+                            var target = $(this.hash);
+                            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                            if (target.length) {
+                                $('html,body').animate({
+                                scrollTop: target.offset().top - $("#navbar").height()
+                                }, 1000);
+                                return false;
+                            }
+                        }
+                    });
+                });
+                $('.dropdown-menu a').on('click', function(){
+                    $(".dropdown-toggle").click();
+                });
             });
         </script>
     </body>
