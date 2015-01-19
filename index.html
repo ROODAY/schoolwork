@@ -27,7 +27,7 @@
         <meta name="msapplication-config" content="favicons/browserconfig.xml">
         <style>
             #top {
-                background-color: #5264ae !important;
+                background-color: #5264ae;
                 color: rgba(255,255,255,.84);
             }
             html,body {
@@ -38,22 +38,37 @@
             }
             #footer {
                 width: 100vw;
+                height: 100vh;
                 position: fixed;
                 bottom: 0;
                 margin: 0;
                 padding: 0;
-                background-color: #5264ae !important;
+                background-color: #5264ae;
                 color: rgba(255,255,255,.84);
+                -webkit-transition: background-color 1s ease;
+                -moz-transition: background-color 1s ease;
+                transition: background-color 1s ease;
             }
             #spacer {
                 margin-top: 1rem;
                 opacity: 0.0;
+            }
+            .panel-body {
+                opacity: 0.0;
+                -webkit-transition: opacity 0.5s ease;
+                -moz-transition: opacity 0.5s ease;
+                transition: opacity 0.5s ease;
+            }
+            .backbutton {
+                background-color: #5264ae !important;
+                position: absolute;
             }
         </style>
     </head>
     <body>
         <div class="jumbotron" id="top">
             <h1>Schoolwork Repository</h1>
+            <button data-color="#fff" class="btn btn-primary btn-fab btn-raised mdi-action-home backbutton"></button>
         </div>
         <main class="container" id="main">
             <h2>Courses:</h2>
@@ -61,7 +76,7 @@
                 <div class="col-lg-12">
                     <div class="jumbotron">
                         <h2>Ancient Civilizations</h2>
-                        <a href="ancientciv" class="btn btn-primary btn-raised">Visit Page <i class="mdi-action-open-in-new"></i><div class="ripple-wrapper"></div></a>
+                        <button data-color="#009587" data-link="ancientciv" class="smooth btn btn-primary btn-raised">Visit Page <i class="mdi-action-open-in-new"></i><div class="ripple-wrapper"></div></button>
                     </div>
                 </div>
             </div>
@@ -69,7 +84,7 @@
                 <div class="col-lg-12">
                     <div class="jumbotron">
                         <h2>AP Statistics</h2>
-                        <a href="apstats" class="btn btn-success btn-raised">Visit page <i class="mdi-action-open-in-new"></i></a>
+                        <button data-color="#0f9d58" data-link="apstats" class="smooth btn btn-success btn-raised">Visit page <i class="mdi-action-open-in-new"></i></button>
                     </div>
                 </div>
             </div>
@@ -77,7 +92,7 @@
                 <div class="col-lg-12">
                     <div class="jumbotron">
                         <h2>Spanish 4(1)</h2>
-                        <a href="spanish" class="btn btn-warning btn-raised">Visit Page <i class="mdi-action-open-in-new"></i></a>
+                        <button data-color="#ff5722" data-link="spanish" class="smooth btn btn-warning btn-raised">Visit Page <i class="mdi-action-open-in-new"></i></button>
                     </div>
                 </div>
             </div>
@@ -93,16 +108,42 @@
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
         <script src="js/ripples.min.js"></script>
         <script src="js/material.min.js"></script>
-        <script src="js/smoothstate.js"></script>
         <script>
+            $(window).load(function(){
+                $("#footer").animate({
+                    "height": "3rem"
+                }, 750, "swing");
+                $(".panel-body").css("opacity", "1.0");
+            });
             $(document).ready(function() {
                 $.material.init();
+                $(".smooth").click(function(){
+                    var link = $(this).data("link");
+                    var color = $(this).data("color");
+                    var url = window.location.href + link;
+                    $(".panel-body").css("opacity", "0.0");
+                    $("#footer").animate({
+                        "height": "100vh"
+                    });
+                    $("#footer").css("background", color);
+                    setTimeout(function(){
+                        window.location.href = link;
+                    }, 1000);
+                });
+                $(".backbutton").click(function(){
+                    var color = $(this).data("color");
+                    var url = window.location.href;
+                    url = url.replace("ancientciv/", "");
+                    $(".panel-body").css("opacity", "0.0");
+                    $("#footer").animate({
+                        "height": "100vh"
+                    });
+                    $("#footer").css("background", color);
+                    setTimeout(function(){
+                        window.location.href = url;
+                    }, 1000);
+                });
             });
-        </script>
-        <script>
-            ;(function ($) {
-                //$('#main').smoothState();
-            })(jQuery);
         </script>
     </body>
 </html>

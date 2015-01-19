@@ -1,3 +1,4 @@
+
 /**
  * smoothState.js is a jQuery plugin to stop page load jank.
  *
@@ -11,6 +12,17 @@
 ;(function ( $, window, document, undefined ) {
     "use strict";
 
+    /** Abort plugin if browser does not suppost pushState */
+    if(!history.pushState) {
+        // setup a dummy fn, but don't intercept on link clicks
+        $.fn.smoothState = function() { return this; };
+        $.fn.smoothState.options = {};
+        return;
+    }
+
+    /** Abort if smoothstate is already present **/
+    if($.fn.smoothState) { return; }
+
     var
         /** Used later to scroll page to the top */
         $body       = $("html, body"),
@@ -18,7 +30,7 @@
         /** Used in development mode to console out useful warnings */
         consl       = (window.console || false),
         
-        /** Plugin default options */
+        /** Plugin default options, will be exposed as $fn.smoothState.options */
         defaults    = {
 
             /** jquery element string to specify which anchors smoothstate should bind to */
@@ -132,10 +144,10 @@
                     htmlParsed  = html.replace(matchTag, function(tag, slash, name, attrs) {
                         var obj = {};
                         if (!slash) {
-                            elems = elems.add("<" + name + "/>");
+                            $.merge(elems, $("<" + name + "/>"));
                             if (attrs) {
                                 $.each($("<div" + attrs + "/>")[0].attributes, function(i, attr) {
-                                obj[attr.name] = attr.value;
+                                    obj[attr.name] = attr.value;
                                 });
                             }
                             elems.eq(-1).attr(obj);
@@ -148,7 +160,7 @@
                 if (!elems.length) {
                     return $(html);
                 }
-                // Create parent node if it hasn"t been created yet.
+                // Create parent node if it hasn't been created yet.
                 if (!parent) {
                     parent = $("<div/>");
                 }
@@ -178,7 +190,7 @@
              * 
              */
             clearIfOverCapacity: function (obj, cap) {
-                // Polyfill Object.keys if it doesn"t exist
+                // Polyfill Object.keys if it doesn't exist
                 if (!Object.keys) {
                     Object.keys = function (obj) {
                         var keys = [],
@@ -236,7 +248,7 @@
              * @param   {string}    resetOn - which other events to trigger allanimationend on
              * 
              */
-             triggerAllAnimationEndEvent: function ($element, resetOn) {
+            triggerAllAnimationEndEvent: function ($element, resetOn) {
 
                 resetOn = " " + resetOn || "";
 
@@ -271,10 +283,10 @@
 
             /** Forces browser to redraw elements */
             redraw: function ($element) {
-                $element.height(0);
-			    setTimeout(function(){$element.height("auto");}, 0);
+                $element.height();
+                //setTimeout(function(){$element.height("100%");}, 0);
             }
-        },
+        }, // eo utility
 
         /** Handles the popstate event, like when the user hits "back" */
         onPopState = function ( e ) {
@@ -425,7 +437,7 @@
                  */
                 fetch = function (url) {
 
-                    // Don"t fetch we have the content already
+                    // Don't fetch we have the content already
                     if(cache.hasOwnProperty(url)) {
                         return;
                     }
@@ -476,7 +488,7 @@
 
                     // Ctrl (or Cmd) + click must open a new tab
                     if (!event.metaKey && !event.ctrlKey && utility.shouldLoad($anchor, options.blacklist)) {
-                        // stopPropagation so that event doesn"t fire on parent containers.
+                        // stopPropagation so that event doesn't fire on parent containers.
                         event.stopPropagation();
                         event.preventDefault();
                         load(url);
@@ -515,8 +527,8 @@
                     
                 };
 
-            /** Override defaults with options passed in */
-            options = $.extend(defaults, options);
+            /** Merge defaults and global options into current configuration */
+            options = $.extend( {}, $.fn.smoothState.options, options );
 
             /** Sets a default state */
             if(window.history.state === null) {
@@ -545,7 +557,7 @@
         /** Returns elements with SmoothState attached to it */
         declareSmoothState = function ( options ) {
             return this.each(function () {
-                // Checks to make sure the smoothState element has an id and isn"t already bound
+                // Checks to make sure the smoothState element has an id and isn't already bound
                 if(this.id && !$.data(this, "smoothState")) {
                     // Makes public methods available via $("element").data("smoothState");
                     $.data(this, "smoothState", new SmoothState(this, options));
@@ -564,5 +576,8 @@
 
     /** Defines the smoothState plugin */
     $.fn.smoothState = declareSmoothState;
+
+    /* expose the default options */
+    $.fn.smoothState.options = defaults;
 
 })(jQuery, window, document);

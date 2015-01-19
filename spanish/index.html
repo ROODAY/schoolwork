@@ -44,16 +44,30 @@
                 padding: 0;
                 background-color: #ff5722 !important;
                 color: rgba(255,255,255,.84);
+                -webkit-transition: background-color 1s ease;
+                -moz-transition: background-color 1s ease;
+                transition: background-color 1s ease;
+                height: 100vh;
             }
             #spacer {
                 margin-top: 1rem;
                 opacity: 0.0;
+            }
+            .panel-body {
+                opacity: 0.0;
+                -webkit-transition: opacity 0.5s ease;
+                -moz-transition: opacity 0.5s ease;
+                transition: opacity 0.5s ease;
+            }
+            .backbutton {
+                position: absolute;
             }
         </style>
     </head>
     <body>
         <div class="jumbotron" id="top">
             <h1>Spanish 4(1)</h1>
+            <button data-color="#5264ae" class="btn btn-primary btn-fab btn-raised mdi-navigation-arrow-back backbutton"></button>
         </div>
         <main class="container">
             <h2>Projects:</h2>
@@ -78,8 +92,27 @@
         <script src="js/ripples.min.js"></script>
         <script src="js/material.min.js"></script>
         <script>
+            $(window).load(function(){
+                $("#footer").animate({
+                    "height": "3rem"
+                }, 750, "swing");
+                $(".panel-body").css("opacity", "1.0");
+            });
             $(document).ready(function() {
                 $.material.init();
+                $(".backbutton").click(function(){
+                    var color = $(this).data("color");
+                    var url = window.location.href;
+                    url = url.replace("ancientciv/", "");
+                    $(".panel-body").css("opacity", "0.0");
+                    $("#footer").animate({
+                        "height": "100vh"
+                    });
+                    $("#footer").css("background", color);
+                    setTimeout(function(){
+                        window.location.href = url;
+                    }, 1000);
+                });
             });
         </script>
     </body>
