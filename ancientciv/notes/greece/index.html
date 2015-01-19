@@ -42,21 +42,45 @@
                 bottom: 0;
                 margin: 0;
                 padding: 0;
-                background-color: #009587 !important;
+                background-color: #009587;
                 color: rgba(255,255,255,.84);
+            }
+            #transition {
+                margin-top: 0;
+               -webkit-transition: background-color 1s ease, margin-top 1s ease;
+                -moz-transition: background-color 1s ease, margin-top 1s ease;
+                transition: background-color 1s ease, margin-top 1s ease;
+                height: 100vh;
+                width: 100vw; 
+                position: fixed;
+                z-index: 999999;
+                background-color: #009587;
             }
             #spacer {
                 margin-top: 1rem;
                 opacity: 0.0;
             }
+            .backbutton {
+                position: absolute;
+            }
         </style>
     </head>
     <body>
+        <div class="panel panel-default" id="transition"></div>
         <div class="jumbotron" id="top">
-            <h1>Ancient Civilizations</h1>
+            <h1>Greece Notes</h1>
+            <button data-color="#009587" class="btn btn-primary btn-fab btn-raised mdi-navigation-arrow-back backbutton"></button>
         </div>
         <main class="container">
             <h2>Section:</h2>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="jumbotron">
+                        <h2>Introduction</h2>
+                        <a data-link="intro" class="btn btn-primary btn-raised">Visit Page <i class="mdi-action-open-in-new"></i><div class="ripple-wrapper"></div></a>
+                    </div>
+                </div>
+            </div>
         </main>
         <div class="panel panel-default" id="spacer">
             <div class="panel-body">Spacer</div>
@@ -70,8 +94,36 @@
         <script src="js/ripples.min.js"></script>
         <script src="js/material.min.js"></script>
         <script>
+            $(window).load(function(){
+                $("#transition").css("margin-top", "-100vh");
+            });
             $(document).ready(function() {
                 $.material.init();
+                $(".btn").click(function(){
+                    var link = $(this).data("link");
+                    var color = $(this).data("color");
+                    var url = window.location.href + link;
+                    $(".panel-body").css("opacity", "0.0");
+                    $("#transition").css({
+                        "margin-top": "0",
+                        "background": color
+                    });
+                    setTimeout(function(){
+                        window.location.href = link;
+                    }, 1000);
+                });
+                $(".backbutton").click(function(){
+                    var color = $(this).data("color");
+                    var url = window.location.href;
+                    url = url.replace("greece/", "");
+                    $("#transition").css({
+                        "margin-top": "0",
+                        "background": color
+                    });
+                    setTimeout(function(){
+                        window.location.href = url;
+                    }, 1000);
+                });
             });
         </script>
     </body>

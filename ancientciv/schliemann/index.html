@@ -44,7 +44,6 @@
                 background-size: cover;
                 background-position: center;
                 background-attachment: fixed;
-                height: 40vh;
                 color: rgba(255,255,255,.84);
             }
             .jumbotron h3 {
@@ -53,6 +52,26 @@
             html,body {
                 font-size: 1rem;
                 line-height: 1.5;
+            }
+            #footer {
+                width: 100vw;
+                position: fixed;
+                bottom: 0;
+                margin: 0;
+                padding: 0;
+                background-color: #009587;
+                color: rgba(255,255,255,.84);
+            }
+            #transition {
+                margin-top: 0;
+               -webkit-transition: background-color 1s ease, margin-top 1s ease;
+                -moz-transition: background-color 1s ease, margin-top 1s ease;
+                transition: background-color 1s ease, margin-top 1s ease;
+                height: 100vh;
+                width: 100vw; 
+                position: fixed;
+                z-index: 999999;
+                background-color: #009587;
             }
             .section {
                 margin-left: 1rem;
@@ -79,9 +98,14 @@
                 background-color: transparent !important;
                 
             }
+            .backbutton {
+                position: absolute;
+                z-index: 2;
+            }
         </style>
     </head>
     <body>
+        <div class="panel panel-default" id="transition"></div>
         <div class="jumbotron" id="top">
             <h1>The Life and Work of Heinrich Schliemann</h1>
             <div class="navbar navbar-inverse">
@@ -102,6 +126,7 @@
                     </ul>
                 </div>
             </div>
+            <button data-color="#5264ae" class="btn btn-primary btn-fab btn-raised mdi-navigation-arrow-back backbutton"></button>
         </div>
         
         <div class="container">
@@ -152,8 +177,7 @@
                     After Mycenae, Schliemann made a few fairly unsuccessful excavations in Ithaca in 1878. He went back to Troy with the help of his new assistant, Wilhelm D&ouml;rpfeld, who was able to better expose the stratigraphy at Troy, revolutionizing Schliemann's previous techniques. Schliemann's last great effort was made in 1884, again with D&ouml;rpfeld, where they excavated the fortified city of Tiryns, found near Mycenae. Nearing the end of his life, Schliemann began to suffer from great ear pain, and although undergoing a successful surgery, he collapsed on December 25th, 1890, due to not allowing himself enough time to recuperate. While the best doctors in Europe were discussing how to treat him, Schliemann died on December 26th, 1890, ending his search for ancient wonders.
                 </p>
             </div>
-        </div>
-            
+        </div> 
         <div class="panel panel-default">
             <div class="panel-body">
                 <h2>Sources</h2>
@@ -180,6 +204,9 @@
         <script src="js/ripples.min.js"></script>
         <script src="js/material.min.js"></script>
         <script>
+            $(window).load(function(){
+                $("#transition").css("margin-top", "-100vh");
+            });
             $(document).ready(function() {
                 $.material.init();
                 $(function() {
@@ -198,6 +225,31 @@
                 });
                 $('.dropdown-menu a').on('click', function(){
                     $(".dropdown-toggle").click();
+                });
+                $(".btn").click(function(){
+                    var link = $(this).data("link");
+                    var color = $(this).data("color");
+                    var url = window.location.href + link;
+                    $(".panel-body").css("opacity", "0.0");
+                    $("#transition").css({
+                        "margin-top": "0",
+                        "background": color
+                    });
+                    setTimeout(function(){
+                        window.location.href = link;
+                    }, 1000);
+                });
+                $(".backbutton").click(function(){
+                    var color = $(this).data("color");
+                    var url = window.location.href;
+                    url = url.replace("schliemann/", "");
+                    $("#transition").css({
+                        "margin-top": "0",
+                        "background": color
+                    });
+                    setTimeout(function(){
+                        window.location.href = url;
+                    }, 1000);
                 });
             });
         </script>

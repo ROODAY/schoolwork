@@ -44,20 +44,21 @@
                 padding: 0;
                 background-color: #009587;
                 color: rgba(255,255,255,.84);
-                -webkit-transition: background-color 1s ease;
-                -moz-transition: background-color 1s ease;
-                transition: background-color 1s ease;
+            }
+            #transition {
+                margin-top: 0;
+               -webkit-transition: background-color 1s ease, margin-top 1s ease;
+                -moz-transition: background-color 1s ease, margin-top 1s ease;
+                transition: background-color 1s ease, margin-top 1s ease;
                 height: 100vh;
+                width: 100vw; 
+                position: fixed;
+                z-index: 999999;
+                background-color: #009587;
             }
             #spacer {
                 margin-top: 1rem;
                 opacity: 0.0;
-            }
-            .panel-body {
-                opacity: 0.0;
-                -webkit-transition: opacity 0.5s ease;
-                -moz-transition: opacity 0.5s ease;
-                transition: opacity 0.5s ease;
             }
             .backbutton {
                 position: absolute;
@@ -65,6 +66,7 @@
         </style>
     </head>
     <body>
+        <div class="panel panel-default" id="transition"></div>
         <div class="jumbotron" id="top">
             <h1>Ancient Civilizations</h1>
             <button data-color="#5264ae" class="btn btn-primary btn-fab btn-raised mdi-navigation-arrow-back backbutton"></button>
@@ -75,7 +77,7 @@
                 <div class="col-lg-12">
                     <div class="jumbotron">
                         <h2>Notes</h2>
-                        <a href="notes" class="btn btn-primary btn-raised">Visit Page <i class="mdi-action-open-in-new"></i><div class="ripple-wrapper"></div></a>
+                        <a data-link="notes" class="btn btn-primary btn-raised">Visit Page <i class="mdi-action-open-in-new"></i><div class="ripple-wrapper"></div></a>
                     </div>
                 </div>
             </div>
@@ -107,7 +109,7 @@
                 <div class="col-lg-12">
                     <div class="jumbotron">
                         <h2>Heinrich Schliemann Biography</h2>
-                        <a href="schliemann" class="btn btn-primary btn-raised">Visit Page <i class="mdi-action-open-in-new"></i><div class="ripple-wrapper"></div></a>
+                        <a data-link="schliemann" class="btn btn-primary btn-raised">Visit Page <i class="mdi-action-open-in-new"></i><div class="ripple-wrapper"></div></a>
                     </div>
                 </div>
             </div>
@@ -115,7 +117,7 @@
                 <div class="col-lg-12">
                     <div class="jumbotron">
                         <h2>The Iliad</h2>
-                        <a href="iliad" class="btn btn-primary btn-raised">Visit Page <i class="mdi-action-open-in-new"></i><div class="ripple-wrapper"></div></a>
+                        <a data-link="iliad" class="btn btn-primary btn-raised">Visit Page <i class="mdi-action-open-in-new"></i><div class="ripple-wrapper"></div></a>
                     </div>
                 </div>
             </div>
@@ -123,7 +125,7 @@
                 <div class="col-lg-12">
                     <div class="jumbotron">
                         <h2>The Odyssey</h2>
-                        <a href="odyssey" class="btn btn-primary btn-raised">Visit Page <i class="mdi-action-open-in-new"></i><div class="ripple-wrapper"></div></a>
+                        <button data-link="odyssey" class="btn btn-primary btn-raised">Visit Page <i class="mdi-action-open-in-new"></i><div class="ripple-wrapper"></div></button>
                     </div>
                 </div>
             </div>
@@ -131,6 +133,7 @@
         <div class="panel panel-default" id="spacer">
             <div class="panel-body">Spacer</div>
         </div>
+        
         <div class="panel panel-default" id="footer">
             <div class="panel-body">Rudhra Raveendran &copy; <script type="text/javascript">document.write(new Date().getFullYear());</script></div>
         </div>
@@ -141,22 +144,31 @@
         <script src="js/material.min.js"></script>
         <script>
             $(window).load(function(){
-                $("#footer").animate({
-                    "height": "3rem"
-                }, 750, "swing");
-                $(".panel-body").css("opacity", "1.0");
+                $("#transition").css("margin-top", "-100vh");
             });
             $(document).ready(function() {
                 $.material.init();
+                $(".btn").click(function(){
+                    var link = $(this).data("link");
+                    var color = $(this).data("color");
+                    var url = window.location.href + link;
+                    $(".panel-body").css("opacity", "0.0");
+                    $("#transition").css({
+                        "margin-top": "0",
+                        "background": color
+                    });
+                    setTimeout(function(){
+                        window.location.href = link;
+                    }, 1000);
+                });
                 $(".backbutton").click(function(){
                     var color = $(this).data("color");
                     var url = window.location.href;
                     url = url.replace("ancientciv/", "");
-                    $(".panel-body").css("opacity", "0.0");
-                    $("#footer").animate({
-                        "height": "100vh"
+                    $("#transition").css({
+                        "margin-top": "0",
+                        "background": color
                     });
-                    $("#footer").css("background", color);
                     setTimeout(function(){
                         window.location.href = url;
                     }, 1000);
