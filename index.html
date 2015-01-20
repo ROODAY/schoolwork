@@ -65,10 +65,26 @@
                 background-color: #5264ae !important;
                 position: absolute;
             }
+            #loading-container {
+                display: none;
+            }
+            .loading-circle{width:50px;height:50px;border-radius:100%;display:inline-block;-webkit-transition:all 1s ease;-moz-transition:all 1s ease;transition:all 1s ease}#loading-green{background-color:#4CAF50;-webkit-animation-iteration-count:infinite;-moz-animation-iteration-count:infinite}#loading-blue{background-color:#3F51B5;-webkit-animation-delay:1s;-webkit-animation-iteration-count:infinite;-moz-animation-delay:1s;-moz-animation-iteration-count:infinite}#loading-purple{background-color:#673AB7;-webkit-animation-delay:2s;-webkit-animation-iteration-count:infinite;-moz-animation-delay:2s;-moz-animation-iteration-count:infinite}#loading-purple2{background-color:#673AB7;position:absolute;top:50%;left:50%;-webkit-transform:translate(-50%, -50%);-moz-transform:translate(-50%, -50%);-ms-transform:translate(-50%, -50%);-o-transform:translate(-50%, -50%);transform:translate(-50%, -50%)}#loading-red{background-color:#F44336;-webkit-animation-delay:3s;-webkit-animation-iteration-count:infinite;-moz-animation-delay:3s;-moz-animation-iteration-count:infinite}#loading-yellow{background-color:#FFEB3B;-webkit-animation-delay:4s;-webkit-animation-iteration-count:infinite;-moz-animation-delay:4s;-moz-animation-iteration-count:infinite}#grower{background-color:#FFF;z-index:99998;position:absolute;top:50%;left:50%;-webkit-transform:translate(-50%, -50%);-moz-transform:translate(-50%, -50%);-ms-transform:translate(-50%, -50%);-o-transform:translate(-50%, -50%);transform:translate(-50%, -50%)}#loading-container{z-index:9999;position:fixed;background-color:#EEEEEE;width:100vw;height:100vh;-webkit-transition:all 1s ease;-moz-transition:all 1s ease;transition:all 1s ease}#loading-container #circle-container{z-index:99999;position:absolute;top:50%;left:50%;-webkit-transform:translate(-50%, -50%);-moz-transform:translate(-50%, -50%);-ms-transform:translate(-50%, -50%);-o-transform:translate(-50%, -50%);transform:translate(-50%, -50%);-webkit-transition:all 1s ease;-moz-transition:all 1s ease;transition:all 1s ease}
         </style>
     </head>
     <body>
-        <div class="panel panel-default" id="transition"></div>
+        <div class="panel panel-default" id="transition">
+            <div id="loading-container">
+                <div id="circle-container" class="hidden-xs">
+                    <div class="loading-circle" id="loading-green"></div>
+                    <div class="loading-circle" id="loading-blue"></div>
+                    <div class="loading-circle" id="loading-purple"></div>
+                    <div class="loading-circle" id="loading-red"></div>
+                    <div class="loading-circle" id="loading-yellow"></div>
+                </div>
+                <div class="loading-circle" id="loading-purple2"></div>
+                <div class="loading-circle" id="grower"></div>
+            </div>
+        </div>
         <div class="jumbotron" id="top">
             <h1>Schoolwork Repository</h1>
             <a data-color="#EEEEEE" class="btn btn-primary btn-fab btn-raised mdi-action-home backbutton"></a>
@@ -132,6 +148,7 @@
                     }, 1000);
                 });
                 $(".backbutton").click(function(){
+                    $("#loading-container").css("display", "block");
                     var color = $(this).data("color");
                     var url = window.location.href;
                     url = url.replace("schoolwork/", "");
