@@ -4,7 +4,7 @@
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
         <link href="css/ripples.min.css" rel="stylesheet">
         <link href="css/material-wfont.min.css" rel="stylesheet">
-        <title>Schoolwork</title>
+        <title>Readings</title>
         <link rel="shortcut icon" href="favicons/favicon.ico">
         <link rel="icon" sizes="16x16 32x32 64x64" href="favicons/favicon.ico">
         <link rel="icon" type="image/png" sizes="196x196" href="favicons/favicon-192.png">
@@ -27,7 +27,7 @@
         <meta name="msapplication-config" content="favicons/browserconfig.xml">
         <style>
             #top {
-                background-color: #5264ae;
+                background-color: #009587;
                 color: rgba(255,255,255,.84);
             }
             html,body {
@@ -42,7 +42,7 @@
                 bottom: 0;
                 margin: 0;
                 padding: 0;
-                background-color: #5264ae;
+                background-color: #009587;
                 color: rgba(255,255,255,.84);
             }
             #transition {
@@ -54,63 +54,54 @@
                 width: 100vw; 
                 position: fixed;
                 z-index: 999999;
-                background-color: #5264ae;
+                background-color: #009587;
             }
             #spacer {
                 margin-top: 1rem;
                 opacity: 0.0;
             }
             .backbutton {
-                background-color: #5264ae !important;
                 position: absolute;
             }
-            #loading-container {
-                display: none;
-            }
-            .loading-circle{width:50px;height:50px;border-radius:100%;display:inline-block;-webkit-transition:all 1s ease;-moz-transition:all 1s ease;transition:all 1s ease}#loading-green{background-color:#4CAF50;-webkit-animation-iteration-count:infinite;-moz-animation-iteration-count:infinite}#loading-blue{background-color:#3F51B5;-webkit-animation-delay:1s;-webkit-animation-iteration-count:infinite;-moz-animation-delay:1s;-moz-animation-iteration-count:infinite}#loading-purple{background-color:#673AB7;-webkit-animation-delay:2s;-webkit-animation-iteration-count:infinite;-moz-animation-delay:2s;-moz-animation-iteration-count:infinite}#loading-purple2{background-color:#673AB7;position:absolute;top:50%;left:50%;-webkit-transform:translate(-50%, -50%);-moz-transform:translate(-50%, -50%);-ms-transform:translate(-50%, -50%);-o-transform:translate(-50%, -50%);transform:translate(-50%, -50%)}#loading-red{background-color:#F44336;-webkit-animation-delay:3s;-webkit-animation-iteration-count:infinite;-moz-animation-delay:3s;-moz-animation-iteration-count:infinite}#loading-yellow{background-color:#FFEB3B;-webkit-animation-delay:4s;-webkit-animation-iteration-count:infinite;-moz-animation-delay:4s;-moz-animation-iteration-count:infinite}#grower{background-color:#FFF;z-index:99998;position:absolute;top:50%;left:50%;-webkit-transform:translate(-50%, -50%);-moz-transform:translate(-50%, -50%);-ms-transform:translate(-50%, -50%);-o-transform:translate(-50%, -50%);transform:translate(-50%, -50%)}#loading-container{z-index:9999;position:fixed;background-color:#EEEEEE;width:100vw;height:100vh;-webkit-transition:all 1s ease;-moz-transition:all 1s ease;transition:all 1s ease}#loading-container #circle-container{z-index:99999;position:absolute;top:50%;left:50%;-webkit-transform:translate(-50%, -50%);-moz-transform:translate(-50%, -50%);-ms-transform:translate(-50%, -50%);-o-transform:translate(-50%, -50%);transform:translate(-50%, -50%);-webkit-transition:all 1s ease;-moz-transition:all 1s ease;transition:all 1s ease}
         </style>
     </head>
     <body>
-        <div class="panel panel-default" id="transition">
-            <div id="loading-container">
-                <div id="circle-container" class="hidden-xs">
-                    <div class="loading-circle" id="loading-green"></div>
-                    <div class="loading-circle" id="loading-blue"></div>
-                    <div class="loading-circle" id="loading-purple"></div>
-                    <div class="loading-circle" id="loading-red"></div>
-                    <div class="loading-circle" id="loading-yellow"></div>
-                </div>
-                <div class="loading-circle" id="loading-purple2"></div>
-                <div class="loading-circle" id="grower"></div>
-            </div>
-        </div>
+        <div class="panel panel-default" id="transition"></div>
         <div class="jumbotron" id="top">
-            <h1>Schoolwork Repository</h1>
-            <a data-color="#EEEEEE" class="btn btn-primary btn-fab btn-raised mdi-action-home backbutton"></a>
+            <h1>Readings</h1>
+            <button data-color="#009587" class="btn btn-primary btn-fab btn-raised mdi-navigation-arrow-back backbutton"></button>
         </div>
-        <main class="container" id="main">
-            <h2>Courses:</h2>
+        <main class="container" id="#main">
+            <h2>Works:</h2>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="jumbotron">
-                        <h2>Ancient Civilizations</h2>
-                        <a data-color="#009587" data-link="ancientciv" class="btn btn-primary btn-raised">Visit Page <i class="mdi-action-open-in-new"></i><div class="ripple-wrapper"></div></a>
+                        <h2>The Iliad</h2>
+                        <a data-link="iliad" class="btn btn-primary btn-raised">Visit Page <i class="mdi-action-open-in-new"></i><div class="ripple-wrapper"></div></a>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="jumbotron">
-                        <h2>AP Statistics</h2>
-                        <a data-color="#0f9d58" data-link="apstats" class="btn btn-success btn-raised">Visit page <i class="mdi-action-open-in-new"></i></a>
+                        <h2>The Odyssey</h2>
+                        <button data-link="odyssey" class="btn btn-primary btn-raised">Visit Page <i class="mdi-action-open-in-new"></i><div class="ripple-wrapper"></div></button>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="jumbotron">
-                        <h2>Spanish 4(1)</h2>
-                        <a data-color="#ff5722" data-link="spanish" class="btn btn-warning btn-raised">Visit Page <i class="mdi-action-open-in-new"></i></a>
+                        <h2>Herodotus on the Persian Wars</h2>
+                        <button data-link="herodotuspersianwars" class="btn btn-primary btn-raised">Visit Page <i class="mdi-action-open-in-new"></i><div class="ripple-wrapper"></div></button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="jumbotron">
+                        <h2>Pericles' Funeral Oration</h2>
+                        <button data-link="periclesoration" class="btn btn-primary btn-raised">Visit Page <i class="mdi-action-open-in-new"></i><div class="ripple-wrapper"></div></button>
                     </div>
                 </div>
             </div>
@@ -147,10 +138,9 @@
                     }, 1000);
                 });
                 $(".backbutton").click(function(){
-                    $("#loading-container").css("display", "block");
                     var color = $(this).data("color");
                     var url = window.location.href;
-                    url = url.replace("schoolwork/", "");
+                    url = url.replace("readings/", "");
                     $("#transition").css({
                         "margin-top": "0",
                         "background": color
