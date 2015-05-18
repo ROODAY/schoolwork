@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/ripples.min.css" rel="stylesheet">
+        <link href="css/material-wfont.min.css" rel="stylesheet">
+
+        <link rel="shortcut icon" href="favicons/favicon.ico">
+        <link rel="icon" sizes="16x16 32x32 64x64" href="favicons/favicon.ico">
+        <link rel="icon" type="image/png" sizes="196x196" href="favicons/favicon-192.png">
+        <link rel="icon" type="image/png" sizes="160x160" href="favicons/favicon-160.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="favicons/favicon-96.png">
+        <link rel="icon" type="image/png" sizes="64x64" href="favicons/favicon-64.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16.png">
+        <link rel="apple-touch-icon" href="favicons/favicon-57.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="favicons/favicon-114.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="favicons/favicon-72.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="favicons/favicon-144.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="favicons/favicon-60.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="favicons/favicon-120.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="favicons/favicon-76.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="favicons/favicon-152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="favicons/favicon-180.png">
+        <meta name="msapplication-TileColor" content="#FFFFFF">
+        <meta name="msapplication-TileImage" content="favicons/favicon-144.png">
+        <meta name="msapplication-config" content="favicons/browserconfig.xml">
+
+        <title>Darius III - Biography</title>
+
+        <style>
+            a {
+                -webkit-transition: all 0.5s ease;
+                -moz-transition: all 0.5s ease;
+                transition: all 0.5s ease;
+            }
+            .panel a:hover, .panel a:focus {
+                text-decoration: none;
+                color: #BDBDBD !important;
+            }
+            .jumbotron {
+                background-color: transparent !important;
+                background-image: url("img/dariusinbattle.jpg");
+                background-size: cover;
+                background-position: center;
+                background-attachment: fixed;
+                color: rgba(10,10,10,.84);
+            }
+            .jumbotron h3 {
+                color: rgba(255,255,255,.75) !important;
+            }
+            html,body {
+                font-size: 1rem;
+                line-height: 1.5;
+            }
+            #footer {
+                width: 100vw;
+                position: fixed;
+                bottom: 0;
+                margin: 0;
+                padding: 0;
+                background-color: #009587;
+                color: rgba(255,255,255,.84);
+            }
+            #transition {
+                margin-top: 0;
+               -webkit-transition: background-color 1s ease, margin-top 1s ease;
+                -moz-transition: background-color 1s ease, margin-top 1s ease;
+                transition: background-color 1s ease, margin-top 1s ease;
+                height: 100vh;
+                width: 100vw; 
+                position: fixed;
+                z-index: 999999;
+                background-color: #009587;
+            }
+            .section {
+                margin-left: 1rem;
+                line-height: 1.5;
+            }
+            .section p {
+                text-indent: 2rem;
+                font-size: 1.2rem;
+                line-height: 1.5;
+            }
+            .panel {
+                background-color: #009587 !important;
+                color: rgba(255,255,255,.84);
+                margin-bottom: 0;
+                margin-top: 1rem;
+            }
+            .panel span, .panel a {
+                color: rgba(255,255,255,.84) !important;
+            }
+            .panel span a{
+                color: rgba(255,255,255,.84) !important;
+            }
+            .navbar {
+                background-color: transparent !important;
+                color: rgba(10,10,10,.84);
+                
+            }
+            .navbar .navbar-nav>li>a {
+              color: rgba(10,10,10,.84) !important;
+              padding-top: 20px;
+              padding-bottom: 20px;
+            }
+            .backbutton {
+                position: absolute;
+                z-index: 2;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="panel panel-default" id="transition"></div>
+        <div class="jumbotron" id="top">
+            <h1>Darius III</h1>
+            <div class="navbar navbar-inverse">
+                <div class="navbar-collapse collapse navbar-inverse-collapse">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li class="dropdown">
+                            <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Sections <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#intro">Introduction</a></li>
+                                <li><a href="#earlylife">Early Life</a></li>
+                                <li><a href="#war">War with Alexander</a></li>
+                                <li><a href="#issus">Issus</a></li>
+                                <li><a href="#gaugamela">Gaugamela</a></li>
+                                <li><a href="#death">Later Life</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <button data-color="#5264ae" class="btn btn-primary btn-fab btn-raised mdi-navigation-arrow-back backbutton"></button>
+        </div>
+        
+        <div class="container">
+            <div class="section" id="intro">
+                <h2>Introduction</h2>
+                <p>
+                    Darius III was the last great king of ancient Persia, and the last of its prosperous Achaemenid dynasty. Even so, he failed to live up to the standards of his predecessors, and it was under him that Persia fell to Greece. Due to his lack of skills and experience, Darius was unable to manage his empire, and Darius became defined only through his failures against Alexander the Great.
+                </p>
+                <img class="img-responsive" src="img/portrait.png" title="Darius III" style="float: right;">
+            </div>
+            <div class="section" id="earlylife">
+                <h2>Early Life</h2>
+                <p>
+                    Darius was born under the name Artashata, to his father and mother, Arsames of Ostanes and Sisygambis, around 380 BCE. At the time, his family was distantly related to the current rulers, with his father being the brother of Artaxerxes III, and his mother the daughter of Artaxerxes II. Artashata only came into power due to a power play by Artaxerxes III's vizier, Bagoas, who had him and all his sons but Arses assassinated. Bagoas had hoped to use Arses as a puppet to further his own agenda, but Arses refused to do the bidding of Bagoas and was promptly assassinated as well in 336 BCE. It was after Arses' death that Artashata took the throne, at the age of 44 and serving as a royal courier. Once in power, Artashata chose the name of Darius III, and followed Artaxerxes III and Arses in that he also wanted to rule independent of Bagoas' wishes. The vizier attempted to assassinate Darius as well using poison, but Darius was warned ahead of time and forced Bagoas to drink the poison himself. 
+                </p>
+                <p>
+                    Despite now being in total control of all of Persia, Darius was in a way even worse off, as he had no prior experience in managing such a large area. By the time he was in power, Persia as an empire had destabilized to the point where the majority of its satrapies were riddled with corruption, ruled by satraps that cared only for themselves and filled with citizens that wanted to break free from their government. To make matters worse, Darius had no intention of fixing the problems that festered within Persia, and he lacked the characteristics of a great leader that would've enabled him to reel in his people. 
+                </p>
+                <img class="img-responsive center-block" src="img/council.jpg" title="Darius' War Council">
+            </div>
+            <div class="section" id="war">
+                <h2>War with Alexander</h2>
+                <p>
+                    Within the same year that Darius III came into power, Philip II of Macedon conquered the weak Greek states, and with their help declared war on Persia as vengeance for the destruction wrought during the Persian wars. Although Philip was assassinated before he could make any real progress in his mission, his son, Alexander the Great, took his place to finish what had been started.
+                </p>
+                <p>
+                    Before the attack from Alexander, Darius had already dealt with another Greek attack, when the Spartans, led by their king Agesilaus, attempted to invade Asia Minor. Darius defeated the incursion by pinning the Spartan forces within the peninsula and sparked rebellions in their homelands, forcing the Spartans to deal with a two front war. Due to the strategies apparent success, Darius utilized it again for Alexander. However, this time, the tactic failed horribly. Darius was so confident in his troops and the lower satrapies to deal with the new Greek threat that he didn't even bother to be present for the battle, opting to stay in his palace at Persepolis. This decision was also supported with the fact that Darius did not expect that Alexander would even want to conquer all of Persia, let alone have the capacity to do so. Unfortunately for Darius, Alexander made quick work of the Persian forces in their first skirmish, at the Battle of Granicus. 
+                </p>
+                <img class="img-responsive center-block" src="img/granicus.jpg" title="The Battle of Granicus">
+            </div>
+            <div class="section" id="issus">
+                <h2>Issus</h2>
+                <p>
+                    Darius didn't begin to take Alexander seriously until over a year later at the Battle of Issus in 333 BCE. Only then did he come onto the field of battle, bringing a force more than twice the size of Alexander's. Even with such a formidable force, Alexander outclassed Darius when it came to tactics, defeating Darius yet again. The stories told by the historian Arrian claim that Darius fled the scene of the battle the second he saw his forces begin to crumble under Alexander's offense, leaving behind his chariot, weapons, and even his family. Upon realizing his folly, Darius attempted to reclaim his family and end the war by sending letters to Alexander. However, every attempt he made was met Alexander's demand that Darius recognize him as the new emperor of Persia, something Darius refused to stoop to. Thus, his battles with Alexander continued until the Macedonian took everything that was his by force.
+                </p>
+                <img class="img-responsive center-block" src="img/issus.jpg" title="The Battle of Issus" style="float: left;">
+            </div>
+            <div class="section" id="gaugamela">
+                <h2>Gaugamela</h2>
+                <p>
+                    Darius and Alexander fought once more, two years after Issus, in 331 BCE, at the Battle of Gaugamela. Again, Darius had the advantage of a larger army, and even took Alexander by surprise at point in the battle, yet ultimately, Darius failed to defeat him. Even with the armies of several nearby satraps, and choosing a location of battle that suited his chariots and would prevent Alexander from having an advantage, Darius fled before the battle ended. Legends say that Darius was the first of the entire Persian force to flee, demolishing Persian morale as he left the battle. His cowardly acts at both Issus and Gaugamela, coupled with the massive Persian casualties, discouraged future soldiers from assembling for him. While Darius attempted to prepare another army at Ecbatana to try and stop Alexander again, Alexander continued to conquer Persian cities, including the major hubs at Babylon and Susa, as well as the main Persian capital of Persepolis. All the while, Darius begged Alexander to end his advances, offering the Macedonian king all of the Persian Empire west of the Euphrates. Alexander, determined to own what remained of Darius' land, refused every request and closed in Darius with every conquest. 
+                </p>
+            </div>
+            <div class="section" id="death">
+                <h2>Later Life/Death</h2>
+                <p>
+                    Unable to raise an army even comparable to the forces at Issus and Gaugamela, Darius was forced to continually from Alexander's encroaching army, further weakening Persian morale. The situation deteriorated with increasing desertions, until it culminated in a coup by a satrap named Bessus and the man in charge of Darius' palace guard, Nabarzanes. The two tried to convince Darius to hand over control to Bessus until Alexander was defeated, but Darius refused to accept. Darius was even approached by a Greek mercenary named Patron, who offered to give him Greek mercenaries so that he would be safe from any attempts on his life by Bessus and Nabarzanes. However, Darius realized such a move would only decrease moral further and turned down Patron's offer. Bessus and Nabarzanes eventually captured Darius and held him hostage while commanding the Persian to continue against Alexander. However, when they realized that Alexander was about to reach them, Bessus panicked, fatally wounding Darius with a javelin and fleeing with his accomplices. Alexander found Darius dying, and became furious that he was killed, as Alexander wanted the Persian king alive. Nevertheless, Alexander had the body sent back to Persepolis, where it was given a proper royal funeral and buried in the royal tombs of his predecessors. At this time, Darius' killer Bessus gave himself the name of Artaxerxes V and the title of the King of Asia. Artaxerxes reached out to Alexander, wanting to make an alliance, but Alexander refused to work with a traitor, and hunted down Artaxerxes. After capturing the fake king, Alexander had each of his arms tied to two bent tries, which upon being released, tore Artaxerxes in two. It was at this point that all remnants of Darius' rule were eradicated, and the once glorious Persian empire was brought to its knees by a Macedonian.
+                </p>
+                <p>
+                    Although Darius III was the last of the great Achaemenid line, and did maintain most of the systems that made Persia so prosperous, like its religious tolerance, he ultimately proved to be an ineffective and cowardly ruler. By failing to properly respond to Alexander's first excursions, and by fleeing from two of his three major battles, Darius essentially gave Alexander his empire. Through his incompetence both on the battlefield and in managing his empire, Darius lost the treasure of his ancestors to a tiny force of Greeks in only a span of a few years. 
+                </p>
+            </div>
+        </div> 
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h2>Sources</h2>
+                <ul>
+                    <li>"Darius III". Encyclopædia Britannica. Encyclopædia Britannica Online. Encyclopædia Britannica Inc., 2015. Web. 18 May. 2015
+                        <br><a href="http://www.britannica.com/EBchecked/topic/151631/Darius-III">http://www.britannica.com/EBchecked/topic/151631/Darius-III</a>
+                    </li>
+                    <li>"Darius III." World History: Ancient and Medieval Eras. ABC-CLIO, 2015. Web. 18 May 2015
+                        <br><a href="http://ancienthistory.abc-clio.com/Search/Display/573794?terms=darius+III">http://ancienthistory.abc-clio.com/Search/Display/573794?terms=darius+III</a>
+                    </li>
+                    <li>"Darius III." Encyclopædia Iranica. Encyclopædia Iranica, n.d. Web. 18 May 2015. 
+                        <br><a href="http://www.iranicaonline.org/articles/darius-iii">http://www.iranicaonline.org/articles/darius-iii</a>
+                    </li>
+                    <li>"Darius III." Ancient History Encyclopedia. N.p., n.d. Web. 18 May 2015. 
+                        <br><a href="http://www.ancient.eu/Darius_III/">http://www.ancient.eu/Darius_III/</a>
+                    </li>
+                </ul>
+                Created by Rudhra Raveendran
+            </div>
+        </div>
+
+        <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script src="js/ripples.min.js"></script>
+        <script src="js/material.min.js"></script>
+        <script>
+            $(window).load(function(){
+                $("#transition").css("margin-top", "-100vh");
+            });
+            $(document).ready(function() {
+                $.material.init();
+                $(function() {
+                    $('a[href*=#]:not([href=#])').click(function() {
+                        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+                            var target = $(this.hash);
+                            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                            if (target.length) {
+                                $('html,body').animate({
+                                scrollTop: target.offset().top - $("#navbar").height()
+                                }, 1000);
+                                return false;
+                            }
+                        }
+                    });
+                });
+                $('.dropdown-menu a').on('click', function(){
+                    $(".dropdown-toggle").click();
+                });
+                $(".btn").click(function(){
+                    var link = $(this).data("link");
+                    var color = $(this).data("color");
+                    var url = window.location.href + link;
+                    $(".panel-body").css("opacity", "0.0");
+                    $("#transition").css({
+                        "margin-top": "0",
+                        "background": color
+                    });
+                    setTimeout(function(){
+                        window.location.href = link;
+                    }, 1000);
+                });
+                $(".backbutton").click(function(){
+                    var color = $(this).data("color");
+                    var url = window.location.href;
+                    url = url.replace("dariusiii/", "");
+                    $("#transition").css({
+                        "margin-top": "0",
+                        "background": color
+                    });
+                    setTimeout(function(){
+                        window.location.href = url;
+                    }, 1000);
+                });
+            });
+        </script>
+    </body>
+</html>
