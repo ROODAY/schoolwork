@@ -224,3 +224,6 @@ html, body {
 .mdl-layout__header-row > * {
   display: block !important;
 }
+.mdl-mega-footer--link-list {
+  overflow-x: hidden;
+}
