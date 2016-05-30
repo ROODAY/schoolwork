@@ -4560,7 +4560,7 @@ is reconstructed from what we know about the content of the missing portion. <b 
         $(".btn").click(function(){
             var link = $(this).data("link");
             var color = $(this).data("color");
-            var url = window.location.href.replace("http", "https") + link;
+            var url = window.location.href + link;
             $(".panel-body").css("opacity", "0.0");
             $("#transition").css({
                 "margin-top": "0",
